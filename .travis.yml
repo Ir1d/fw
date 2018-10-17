@@ -10,6 +10,8 @@ install:
 script:
   - touch XD
   - rm XD
+after_success:
+  - python3 setup.py sdist bdist_wheel
 deploy:
   provider: pypi
   user: $PYPI_NAME
