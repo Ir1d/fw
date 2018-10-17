@@ -1,0 +1,15 @@
+language: python
+cache:
+  pip: true
+  directories:
+  - node_modules
+python:
+  - 3.6
+install:
+  - pip install -r requirements.txt
+deploy:
+  provider: pypi
+  user: $PYPI_NAME
+  password: $PYPI_KEY
+  on:
+    tags: true
