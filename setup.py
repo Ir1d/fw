@@ -5,10 +5,10 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="fw",
-    version="0.0.1",
+    version="0.0.10",
     author="Ir1d",
     author_email="sirius.caffrey@gmail.com",
-    description="A small example package",
+    description="Easy2use framework to organize experiments",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Ir1d/fw",
