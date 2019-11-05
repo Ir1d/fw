@@ -1,3 +1,2 @@
-name = "fw"
-
 from .nn import *
+name = "fw"
