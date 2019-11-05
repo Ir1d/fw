@@ -1,2 +1,4 @@
 # fw
-Easy2use framework to organize experiments
+FrameWork of Fantastic Widgets for PyTorch.
+
+**Disclaimer: still in its early stages.**
