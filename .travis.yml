@@ -3,13 +3,43 @@ cache:
   pip: true
   directories:
   - node_modules
-python:
-  - 3.6
+
+
+matrix:
+  include:
+    - os: linux
+      dist: xenial  # Ubuntu 16.04
+      python: 3.6
+      env: TOXENV=py36
+    - os: linux
+      dist: bionic  # Ubuntu 18.04
+      python: 3.6
+      env: TOXENV=py36
+    - os: linux
+      dist: bionic  # Ubuntu 18.04
+      python: 3.7
+      env: TOXENV=py37
+    # - os: osx
+    #   osx_image: xcode9.4
+    #   language: generic
+    #   env: TOXENV=py36
+    #   addons:
+    #     homebrew:
+    #       # update: true
+    #       packages: python3.6
+    #   before_install:
+    #     - pip3 install virtualenv
+    #     - virtualenv -p python3 ~/venv
+    #     - source ~/venv/bin/activate
+
 install:
   - pip install -r requirements.txt
+  - sudo pip install tox
+
 script:
-  - touch XD
-  - rm XD
+  - tox --sitepackages
+  - pip install --editable .
+
 after_success:
   - python3 setup.py sdist bdist_wheel
 deploy:
