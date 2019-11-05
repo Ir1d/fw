@@ -3,9 +3,6 @@ import torch.nn as nn
 
 
 class SwishImplementation(torch.autograd.Function):
-    r"""A memory efficient swish implementation,
-    written by: Pavel Yakubovskiy, https://github.com/qubvel
-    """
     @staticmethod
     def forward(ctx, i):
         result = i * torch.sigmoid(i)
@@ -20,5 +17,8 @@ class SwishImplementation(torch.autograd.Function):
 
 
 class MemoryEfficientSwish(nn.Module):
+    r"""A memory efficient swish implementation,
+    written by: Pavel Yakubovskiy, https://github.com/qubvel
+    """
     def forward(self, x):
         return SwishImplementation.apply(x)
