@@ -3,3 +3,4 @@ matplotlib
 numpy
 # fastprogress
 pycodestyle
+torch>=1.1.0

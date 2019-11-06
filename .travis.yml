@@ -33,7 +33,6 @@ matrix:
     #     - source ~/venv/bin/activate
 
 install:
-  - pip install -r requirements.txt
   - sudo pip install tox
 
 script:
@@ -41,8 +40,16 @@ script:
   - pip install --editable .
 
 after_success:
+  - pip install -r ./docs/requirements.txt
   - python3 setup.py sdist bdist_wheel
+  - bash gen_docs.sh
 deploy:
+  provider: pages
+  skip_cleanup: true
+  github-token: $GH_TOKEN
+  local-dir: docs/build/html
+  on:
+    branch: master
   provider: pypi
   user: $PYPI_NAME
   password: $PYPI_KEY
