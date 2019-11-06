@@ -46,11 +46,13 @@ after_success:
   - export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
   - npm install -g katex
   - bash gen_docs.sh
+before_deploy:
+  - cd /home/travis/build/Ir1d/fw
 deploy:
   provider: pages
   skip_cleanup: true
   github-token: $GH_TOKEN
-  local-dir: docs/build/html
+  local-dir: 'docs/build/html'
   on:
     branch: master
   provider: pypi
