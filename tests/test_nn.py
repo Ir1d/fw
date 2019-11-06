@@ -7,7 +7,7 @@ import math
 def test_PixelUnshuffle():
     """Test nn.PixelUnshuffle()
     """
-    return True
+    pass
 
 def test_Swish():
     """Test nn.Swish()
