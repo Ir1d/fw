@@ -12,6 +12,7 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
+import pytorch_sphinx_theme
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../../'))
@@ -54,6 +55,7 @@ extensions = [
     'sphinx.ext.githubpages',
 ]
 
+
 # Disable docstring inheritance
 autodoc_inherit_docstrings = False
 
@@ -92,7 +94,10 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+# html_theme = 'alabaster'
+
+html_theme = 'pytorch_sphinx_theme'
+html_theme_path = [pytorch_sphinx_theme.get_html_theme_path()]
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -104,6 +109,15 @@ html_theme = 'alabaster'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+
+html_theme_options = {
+    'pytorch_project': 'docs',
+    'canonical_url': 'https://ir1d.github.com/fw/',
+    'collapse_navigation': False,
+    'display_version': True,
+    'logo_only': True,
+}
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
