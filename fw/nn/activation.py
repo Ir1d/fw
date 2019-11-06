@@ -20,5 +20,6 @@ class Swish(nn.Module):
     r"""A memory efficient swish implementation,
     written by: Pavel Yakubovskiy, https://github.com/qubvel
     """
+
     def forward(self, x):
         return SwishImplementation.apply(x)
