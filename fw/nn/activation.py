@@ -16,7 +16,7 @@ class SwishImplementation(torch.autograd.Function):
         return grad_output * (sigmoid_i * (1 + i * (1 - sigmoid_i)))
 
 
-class MemoryEfficientSwish(nn.Module):
+class Swish(nn.Module):
     r"""A memory efficient swish implementation,
     written by: Pavel Yakubovskiy, https://github.com/qubvel
     """

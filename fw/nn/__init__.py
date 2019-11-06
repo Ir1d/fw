@@ -1,4 +1,4 @@
-from .activation import MemoryEfficientSwish
+from .activation import Swish
 from .misc import PixelUnShuffle
 
-__all__ = ['PixelUnShuffle', 'MemoryEfficientSwish']
+__all__ = ['PixelUnShuffle', 'Swish']
